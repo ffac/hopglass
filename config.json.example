@@ -1,9 +1,14 @@
 {
-  "dataPath": "https://map.luebeck.freifunk.net/data/",
-  "siteName": "Freifunk Lübeck",
+  "dataPath": [
+    "http://map.gl.wupper.ffrl.de/data/",
+    "http://map.ffdus.de/data/",
+    "http://map.fichtenfunk.freifunk.ruhr/json/"
+  ],
+  "siteName": "Freifunk Fluss",
   "mapSigmaScale": 0.5,
   "showContact": true,
   "maxAge": 14,
+  "blinkingHours": 8,
   "mapLayers": [
     { "name": "MapQuest",
       "url": "https://otile{s}-s.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.jpg",
@@ -19,9 +24,47 @@
     }
   ],
   "siteNames": [
-    { "site": "ffhl", "name": "Lübeck" },
-    { "site": "ffeh", "name": "Entenhausen" },
-    { "site": "ffgt", "name": "Gothamcity" },
-    { "site": "ffal", "name": "Atlantis" }
+    { "site": "ffgl-bcd", "name": "Burscheid" },
+    { "site": "ffgl-bgl", "name": "Bergisch Gladbach" },
+    { "site": "ffgl-lln", "name": "Leichlingen" },
+    { "site": "ffgl-ode", "name": "Odenthal" },
+    { "site": "ffgl-ovr", "name": "Overath" },
+    { "site": "ffgl-rrh", "name": "Rösrath" },
+    { "site": "ffdus", "name": "Flingern" }
+  ],
+  "nodeCharts": [
+    {
+      "name": "Statistik",
+      "metrics": [
+        {
+          "id": "clientcount",
+          "color": "#1566A9",
+          "label": "Clients"
+        },
+        {
+          "id": "loadavg",
+          "color": "#1566A9",
+          "label": "Load"
+        },
+        {
+          "id": "uptime",
+          "color": "#1566A9",
+          "label": "Uptime"
+        }
+      ],
+      "defaultMetric": "clientcount",
+      "data": {
+        "url": "http://137.226.33.62:8002/render",
+        "parameters": [
+          "format=json",
+          "from=-###ZOOM_FROM###",
+          "target=alias(summarize(freifunk.nodes-legacy.###NODE_ID###.clientcount,\"###ZOOM_INTERVAL###\",\"max\"),\"clientcount\")",
+          "target=alias(summarize(freifunk.nodes-legacy.###NODE_ID###.loadavg,\"###ZOOM_INTERVAL###\",\"avg\"),\"loadavg\")",
+          "target=alias(summarize(freifunk.nodes-legacy.###NODE_ID###.uptime,\"###ZOOM_INTERVAL###\",\"last\"),\"uptime\")"
+        ]
+      },
+      "quirks": [ "id_to_mac" ]
+    }
   ]
 }
+
