@@ -1,14 +1,9 @@
 {
-  "dataPath": [
-    "http://map.gl.wupper.ffrl.de/data/",
-    "http://map.ffdus.de/data/",
-    "http://map.fichtenfunk.freifunk.ruhr/json/"
-  ],
-  "siteName": "Freifunk Fluss",
+  "dataPath": "https://map.luebeck.freifunk.net/data/",
+  "siteName": "Freifunk Lübeck",
   "mapSigmaScale": 0.5,
   "showContact": true,
   "maxAge": 14,
-  "blinkingHours": 8,
   "mapLayers": [
     { "name": "MapQuest",
       "url": "https://otile{s}-s.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.jpg",
@@ -24,13 +19,10 @@
     }
   ],
   "siteNames": [
-    { "site": "ffgl-bcd", "name": "Burscheid" },
-    { "site": "ffgl-bgl", "name": "Bergisch Gladbach" },
-    { "site": "ffgl-lln", "name": "Leichlingen" },
-    { "site": "ffgl-ode", "name": "Odenthal" },
-    { "site": "ffgl-ovr", "name": "Overath" },
-    { "site": "ffgl-rrh", "name": "Rösrath" },
-    { "site": "ffdus", "name": "Flingern" }
+    { "site": "ffhl", "name": "Lübeck" },
+    { "site": "ffeh", "name": "Entenhausen" },
+    { "site": "ffgt", "name": "Gothamcity" },
+    { "site": "ffal", "name": "Atlantis" }
   ],
   "nodeCharts": [
     {
@@ -67,4 +59,3 @@
     }
   ]
 }
-
