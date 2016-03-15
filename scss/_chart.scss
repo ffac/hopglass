@@ -17,4 +17,12 @@
       margin-left: 6px;
     }
   }
+
+  .c3-tooltip-container {
+    width: 150px;
+    .c3-tooltip {
+      border-collapse: collapse;
+    }
+  }
 }
+
