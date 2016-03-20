@@ -1,0 +1,53 @@
+{
+  "dataPath": "http://data.aachen.freifunk.net/",
+  "siteName": "Freifunk Regio Aachen",
+  "mapSigmaScale": 0.5,
+  "showContact": false,
+  "maxAge": 14,
+  "mapLayers": [
+    {
+      "name": "MapQuest",
+      "url": "https://otile{s}-s.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.jpg",
+      "config": {
+        "subdomains": "1234",
+        "type": "osm",
+        "attribution": "Tiles &copy; <a href=\"https://www.mapquest.com/\" target=\"_blank\">MapQuest</a>, Data CC-BY-SA OpenStreetMap",
+        "maxZoom": 18
+      }
+    },
+    {
+      "name": "Stamen.TonerLite"
+    }
+  ],
+  "siteNames": [
+    { "site": "ffac", "name": "Aachen" }
+  ],
+  "nodeCharts": [
+    {
+      "name": "Statistik",
+      "metrics": [
+        {
+          "id": "clientcount",
+          "color": "#1566A9",
+          "label": "Clients"
+        },
+        {
+          "id": "loadavg",
+          "color": "#1566A9",
+          "label": "Load"
+        },
+        {
+          "id": "uptime",
+          "color": "#1566A9",
+          "label": "Uptime"
+        }
+      ],
+      "defaultMetric": "clientcount",
+      "data": {
+        "url": "https://graphite.ffac.aachalon.net/json/###ZOOM_FROM###/###NODE_ID###",
+        "parameters": [
+        ]
+      }
+    }
+  ]
+}
