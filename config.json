@@ -1,5 +1,5 @@
 {
-  "dataPath": "http://data.aachen.freifunk.net/",
+  "dataPath": "https://data.aachen.freifunk.net/",
   "siteName": "Freifunk Regio Aachen",
   "mapSigmaScale": 0.5,
   "showContact": false,
